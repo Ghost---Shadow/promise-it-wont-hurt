@@ -1,4 +1,4 @@
-const attachTitle = require('./code');
+const { attachTitle, promise } = require('./code');
 
 describe('When passed', () => {
   it('MANHATTAN it should return DR. MANHATTAN', () => {
@@ -6,6 +6,11 @@ describe('When passed', () => {
   });
   it('empty string it should return DR. ', () => {
     expect(attachTitle('')).toBe('DR. ');
+  });
+  it('the promise, it should fulfill it', async () => {
+    await promise.then(attachTitle).then((output) => {
+      expect(output).toBe('DR. MANHATTAN');
+    });
   });
 });
 
