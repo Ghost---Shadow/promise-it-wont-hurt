@@ -1,7 +1,7 @@
 const promise = require('./code');
 
 describe('It should', () => {
-  it('throw an error', (done) => {
+  it('preserve the order', (done) => {
     const myArray = [];
     const expectedArray = ['MAIN PROGRAM', 'PROMISE VALUE'];
     promise.then((msg) => {
