@@ -1,6 +1,6 @@
-const promise = new Promise(((fulfill, reject) => {
+const promise = new Promise(((resolve, reject) => {
   setTimeout(() => {
-    fulfill('FULFILLED!'); // Yay! Everything went well!
+    resolve('FULFILLED!'); // Yay! Everything went well!
   }, 300);
 }));
 

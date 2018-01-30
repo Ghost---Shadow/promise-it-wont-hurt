@@ -1,5 +1,5 @@
-const promise = new Promise((success, failure) => {
-  success('PROMISE VALUE');
+const promise = new Promise((resolve, reject) => {
+  resolve('PROMISE VALUE');
 });
 
 promise.then(console.log);

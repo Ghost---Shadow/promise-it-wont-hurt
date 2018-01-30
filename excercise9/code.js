@@ -1,12 +1,12 @@
 function parsePromised(jsonString) {
-  return new Promise((success, fail) => {
+  return new Promise((resolve, reject) => {
     let jsonObj;
     try {
       jsonObj = JSON.parse(jsonString);
     } catch (err) {
-      fail(err.message);
+      reject(err.message);
     }
-    success(jsonObj);
+    resolve(jsonObj);
   });
 }
 

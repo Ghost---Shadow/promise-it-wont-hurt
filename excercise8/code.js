@@ -4,7 +4,7 @@ function attachTitle(name) {
 
 module.exports.attachTitle = attachTitle;
 
-const promise = new Promise((fulfilled, failed) => fulfilled('MANHATTAN'));
+const promise = new Promise((resolve, reject) => resolve('MANHATTAN'));
 
 promise.then(attachTitle).then(console.log);
 

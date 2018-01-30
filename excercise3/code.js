@@ -2,7 +2,7 @@ function onReject(error) {
   console.log(error.message);
 }
 
-const promise = new Promise(((fulfill, reject) => {
+const promise = new Promise(((resolve, reject) => {
   setTimeout(() => {
     reject(new Error('REJECTED!'));
   }, 300);
