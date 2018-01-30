@@ -4,3 +4,5 @@ const promise = new Promise((resolve, reject) => {
 
 promise.then(console.log);
 console.log('MAIN PROGRAM');
+
+module.exports = promise;
