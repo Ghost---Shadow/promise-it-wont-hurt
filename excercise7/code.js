@@ -7,9 +7,9 @@ first().then(msg =>
 
 /*
 first()
-  .then(msg => second(msg))
+  .then(second)
   .then(console.log);
-  */
+*/
 
 function myFun(f1, f2, cb) {
   f1()
