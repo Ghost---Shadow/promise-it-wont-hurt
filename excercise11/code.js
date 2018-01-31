@@ -1,15 +1,23 @@
-let counter = 0;
-
 function all(promise1, promise2) {
-  return promise1.then(() => {
-    counter += 1;
-    return promise2;
-  }).then(() => {
-    counter += 1;
+  let counter = 0;
+  return new Promise((resolve) => {
+    const valArray = [];
+    function incrementAndResolve(index, val) {
+      counter += 1;
+      valArray[index] = val;
+      if (counter === 2) {
+        resolve(valArray);
+      }
+    }
+    promise1.then((val) => {
+      incrementAndResolve(0, val);
+    });
+    promise2.then((val) => {
+      incrementAndResolve(1, val);
+    });
   });
 }
 
-module.exports.all = all;
-module.exports.thatCounter = counter;
+module.exports = all;
 
-// console.log(getPromise1(), getPromise2());
+// all(getPromise1(), getPromise2()).then(console.log);
