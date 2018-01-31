@@ -1,7 +1,7 @@
 const qHttp = require('q-io/http');
 
 function fetchJson(url, cb) {
-  qHttp.read().then((data) => {
+  qHttp.read(url).then((data) => {
     try {
       cb(JSON.parse(data));
     } catch (err) {
@@ -10,7 +10,7 @@ function fetchJson(url, cb) {
   });
 }
 
-fetchJson('http://localhost:1337', console.log);
+// fetchJson('http://localhost:1337', console.log);
 
 module.exports = fetchJson;
 
